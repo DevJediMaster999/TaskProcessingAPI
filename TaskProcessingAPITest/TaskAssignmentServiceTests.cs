@@ -57,7 +57,6 @@ namespace WebAppTaskProcessingTest
                 _mockUserService.Setup(repo => repo.GetAllExceptAssigned(task.UserId.Value)).ReturnsAsync(new List<UserEntity>());
             }
            
-
             // Act
             var isTaskCompleted = await taskAssignmentService.ProcessTask(taskId);
 
