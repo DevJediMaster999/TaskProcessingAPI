@@ -78,7 +78,7 @@ namespace TaskProcessingAPI.Application.Services
         public async Task UpdateTaskAsync(TaskEntity task)
         {
             if (task == null)
-                throw new ArgumentNullException(nameof(task));
+                throw new TaskNotFoundException();
 
             _dbContext.Entry(task).State = EntityState.Modified;
             await _dbContext.SaveChangesAsync();
